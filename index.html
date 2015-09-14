@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Travelling Man</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traveling Man</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/scripts.js"></script>
@@ -9,67 +10,74 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
   </head>
   <body>
-    <div class="ui container main">
-      <h1 class="ui header">
-        Travelling Man
-        <div class="sub header">We will delete all info if you refresh the page!</div>
-      </h1>
+    <div class="ui sidebar uncover along push">
+      <div class="ui segment basic">
+        <form id="add-place" class="ui form">
 
-      <form id="add-place" class="ui form">
-        <div class="two fields">
-
-          <div class="field eight wide">
+          <div class="field">
             <label for="location">Where did you visit?</label>
             <input type="text" placeholder="i.e. Tenochtitlan" id="location">
           </div>
 
-          <div class="field eight wide">
+          <div class="field">
             <label for="duration">How long were you there?</label>
             <div class="ui right labeled input">
               <input type="text" placeholder="5" id="duration"><div class="ui label">days</div>
             </div>
           </div>
 
-        </div>
+          <div class="field">
+            <label>What time of year were you there?</label>
+            <select class="ui dropdown" id="season">
+              <option value="">Season</option>
+              <option value="Spring">Spring</option>
+              <option value="Summer">Summer</option>
+              <option value="Fall">Fall</option>
+              <option value="Winter">Winter</option>
 
-        <div class="field">
-          <label>What time of year were you there?</label>
-          <select class="ui dropdown" id="season">
-            <option value="">Season</option>
-            <option value="Spring">Spring</option>
-            <option value="Summer">Summer</option>
-            <option value="Fall">Fall</option>
-            <option value="Winter">Winter</option>
+            </select>
+          </div>
+          <div class="ui divider"></div>
 
-          </select>
-        </div>
-        <div class="ui divider"></div>
-
-        <div id="landmarks" class="field">
-          <label>Landmarks You Visited:</label>
-        </div>
-
-        <div class="field">
-          <div class="ui animated fade button" id="add-landmark" tabindex="0">
-            <div class="visible content">Add Landmark</div>
-            <div class="hidden content">
-              <i class="find icon"></i>
+          <div id="landmarks" class="field">
+            <label>Landmarks You Visited:</label>
+            <div class="landmarks">
             </div>
           </div>
+
+          <div class="field">
+            <div class="ui button" id="add-landmark">
+              <i class="find icon"></i> Add Landmark
+            </div>
+          </div>
+
+          <div class="ui divider"></div>
+
+          <div class="field">
+            <label for="notes">Notes on your trip:</label>
+            <textarea id="notes" placeholder="Saw a pretty girl. I was too scared to talk to her."></textarea>
+          </div>
+
+          <div class="ui divider"></div>
+
+          <button type="submit" class="ui teal button">Add Place</button>
+
+        </form>
+      </div>
+    </div>
+    <div class="pusher">
+      <div class="ui container main">
+        <button class="attached ui menu secondary"><i class="sidebar icon"></i>Add a Trip</button>
+        <h1 class="ui header">
+          Traveling Man
+          <div class="sub header">We will delete all info if you refresh the page!</div>
+        </h1>
+
+        <div class="ui cards" id="trips">
+
         </div>
 
-        <div class="ui divider"></div>
-
-        <div class="field">
-          <label for="notes">Notes on your trip:</label>
-          <textarea id="notes" placeholder="Saw a pretty girl. I was too scared to talk to her."></textarea>
-        </div>
-
-        <div class="ui divider"></div>
-
-        <button type="submit" class="ui teal button">Add Place</button>
-
-      </form>
+      </div>
     </div>
   </body>
 </html>

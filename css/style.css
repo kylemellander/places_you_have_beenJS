@@ -4,3 +4,10 @@ body {
 .ui.container.main {
   margin-bottom: 20px !important;
 }
+
+.segment.basic label {
+  color:#fff !important;
+}
+.ui.attached.menu {
+  border:none !important;
+}
